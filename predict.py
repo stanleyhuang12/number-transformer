@@ -229,6 +229,8 @@ class MathTransformer(torch.nn.Module):
 
 if __name__ == "__main__": 
     input_file_name = sys.argv[1]
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
     model = MathTransformer() 
     model.load_state_dict(torch.load("math.pt", map_location=device))
     model.eval()
