@@ -94,7 +94,7 @@ class MathTransformer(torch.nn.Module):
     are initialized with small normal distributions (std=0.02), following GPT
     conventions.
     """
-    def __init__(self, d_model=256, nhead=8, num_layers=6, dim_ff=512, max_len=100, dropout=0.2):
+    def __init__(self, d_model=256, nhead=8, num_layers=8, dim_ff=512, max_len=100, dropout=0.2):
         """
         Initialize the MathTransformer.
         Args:
