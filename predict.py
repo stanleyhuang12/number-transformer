@@ -231,15 +231,14 @@ if __name__ == "__main__":
     input_file_name = sys.argv[1]
     if torch.cuda.is_available():
         device = torch.device("cuda")
+    else: 
+        device = torch.device("cpu") 
     model = MathTransformer() 
     model.load_state_dict(torch.load("math.pt", map_location=device))
+    model.to(
     model.eval()
     print("Hello!") 
-    if torch.cuda.is_available():
-        device = torch.device("cuda")
-        print("Using cuda!") 
-    else:
-        device = torch.device("cpu")
+
 
     with open(input_file_name, "r") as f:
         lines = [line.strip() for line in f if line.strip()]
