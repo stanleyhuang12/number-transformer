@@ -235,7 +235,7 @@ if __name__ == "__main__":
         device = torch.device("cpu") 
     model = MathTransformer() 
     model.load_state_dict(torch.load("math.pt", map_location=device))
-    model.to(
+    model.to(device)
     model.eval()
     print("Hello!") 
 
