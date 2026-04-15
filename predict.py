@@ -237,7 +237,7 @@ if __name__ == "__main__":
         device = torch.device("cuda")
         print("Using cuda!") 
     else:
-        device = torch.device("cpu")'
+        device = torch.device("cpu")
 
     with open(input_file_name, "r") as f:
         lines = [line.strip() for line in f if line.strip()]
